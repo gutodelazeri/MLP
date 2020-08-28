@@ -1,0 +1,1 @@
+n_potencias_de_2 n = take n potencias where potencias = 1:map (*2) potencias

@@ -1,5 +1,3 @@
-% %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-% %% fatos
 pessoa('joao').
 pessoa('maria').
 pessoa('leonardo').
@@ -50,35 +48,36 @@ gosta('jose', 'jaqueline').
 gosta('leonardo', 'vinho').
 gosta('jose', 'boliche').
 
-% %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-% %% regras
-mae(F,M):-pessoa(F), pessoa(M),
-genitor(F,M), genero(M,'mulher').
-pai(F,P):-pessoa(F), pessoa(P),
-genitor(F,P), genero(P,'homem').
-pais(F, P, M):-pessoa(F), pessoa(P), pessoa(M),
-pai(F, P), mae(F, M). % se é genitor (pai ou mae)
+% %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+mae(F,M):-pessoa(F), pessoa(M), genitor(F,M), genero(M,'mulher').
+pai(F,P):-pessoa(F), pessoa(P), genitor(F,P), genero(P,'homem').
+
+pais(F, P, M):-pessoa(F), pessoa(P), pessoa(M), pai(F, P), mae(F, M). 
+
 irmaos(X,Y):-genitor(X,G), genitor(Y, G), X\=Y. % se é irmão ou irmã
 irmao(X,Y):-irmaos(X,Y), genero(Y,'homem').
 irma(X,Y):-irmaos(X,Y), genero(Y,'mulher').
+
+% Avô
 avom(X,Y):-pai(X,Z), pai(Z,Y).
 avof(X,Y):-mae(X,Z), pai(Z,Y).
-avos(X,Y):-avom(X,Y) ; avof(X, Y). % se é avo ou avó
+avos(X,Y):-avom(X,Y) ; avof(X, Y). % se é avo paterno ou materno
+
+% Avó
+avohm(X,Y):-pai(X,Z), mae(Z,Y).
+avohf(X,Y):-mae(X,Z), mae(Z,Y).
+avohs(X,Y):-avohm(X,Y) ; avohf(X, Y). % se é avó paterna ou materna
+
 tio(X, T):-pais(X, P, M), (irmao(P, T); irmao(M, T)).
 tia(X, T):-pais(X, P, M), (irma(P, T); irma(M, T)).
 tios(X,T):-tio(X,T);tia(X,T). % se é tio ou tia
+
 filho(X,Y):-(pai(Y,X);mae(Y,X)),genero(Y, 'homem').
 filha(X,Y):-(pai(Y,X);mae(Y,X)),genero(Y, 'mulher').
 filhos(X,Y):-filho(X,Y);filha(X,Y). % se é filho ou filha
 
-% repare a seguinte cláusula. As expressões separadas por OR (;)
-% poderiam estar em cláusulas separadas (o efeito é o mesmo)!
 primos(X,Y):-(pai(X,P), irmaos(P,T), filhos(T,Y)) ;
 (mae(X,M), irmaos(M,T), filhos(T,Y)).
-
-% mesmo que acima
-%primos(X,Y):-(pai(X,P), irmaos(P,T), filhos(T,Y)).
-%primos(X,Y):-(mae(X,M), irmaos(M,T), filhos(T,Y)).
 
 primo(X,Y):-primos(X,Y), genero(Y, 'homem').
 primo(X,Y):-primos(X,Y), genero(Y, 'mulher').

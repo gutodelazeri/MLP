@@ -1,0 +1,30 @@
+#IncludeRegexLine: ^[ 	]*[#%][ 	]*(include|import)[ 	]*[<"]([^">]+)([">])
+
+#IncludeRegexScan: ^.*$
+
+#IncludeRegexComplain: ^$
+
+#IncludeRegexTransform: 
+
+../Q1/Aluno.h
+Pessoa.h
+../Q1/Pessoa.h
+
+../Q1/Pessoa.h
+iostream
+-
+string
+-
+ctime
+-
+
+/Users/gutodelazeri/workspace/college/Programming-Languages/OOP/Q3/Funcionario.cpp
+Funcionario.h
+/Users/gutodelazeri/workspace/college/Programming-Languages/OOP/Q3/Funcionario.h
+
+/Users/gutodelazeri/workspace/college/Programming-Languages/OOP/Q3/Funcionario.h
+Pessoa.h
+/Users/gutodelazeri/workspace/college/Programming-Languages/OOP/Q3/Pessoa.h
+Aluno.h
+/Users/gutodelazeri/workspace/college/Programming-Languages/OOP/Q3/Aluno.h
+

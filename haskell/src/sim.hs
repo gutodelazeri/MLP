@@ -9,5 +9,5 @@ prod_int lst1 lst2 =
     sum (map (\(a,b) -> a*b) (myRecursiveLambda (lst1, lst2)))
 
 
-sim v1 v2 =
+let sim v1 v2 =
     (prod_int v1 v2)/((norma v1)*(norma v2))

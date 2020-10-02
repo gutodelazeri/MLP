@@ -15,7 +15,11 @@ public:
     Pessoa(std::string, Sexo, time_t); // Construtor alternativo
     Pessoa(const Pessoa& outra); // // construtor de cópia
 
-    Pessoa& operator=(const Pessoa& outra);
+    [[noreturn]] Pessoa& operator=(const Pessoa& outra);
+    bool operator>(const Pessoa& outra);
+    bool operator<(const Pessoa& outra);
+    bool operator>=(const Pessoa& outra);
+    bool operator<=(const Pessoa& outra);
 
     time_t get_dtnascimento() const;
     void set_dtnascimento(time_t dtnascimento);

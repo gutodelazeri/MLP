@@ -18,13 +18,23 @@ string
 ctime
 -
 
-/Users/gutodelazeri/workspace/college/Programming-Languages/OOP/Q3/Funcionario.cpp
-Funcionario.h
-/Users/gutodelazeri/workspace/college/Programming-Languages/OOP/Q3/Funcionario.h
-
-/Users/gutodelazeri/workspace/college/Programming-Languages/OOP/Q3/Funcionario.h
+../Q3/Funcionario.h
 Pessoa.h
-/Users/gutodelazeri/workspace/college/Programming-Languages/OOP/Q3/Pessoa.h
+../Q3/Pessoa.h
 Aluno.h
-/Users/gutodelazeri/workspace/college/Programming-Languages/OOP/Q3/Aluno.h
+../Q3/Aluno.h
+
+/Users/gutodelazeri/workspace/college/Programming-Languages/OOP/Q4/main.cpp
+iostream
+-
+vector
+-
+random
+-
+Pessoa.h
+/Users/gutodelazeri/workspace/college/Programming-Languages/OOP/Q4/Pessoa.h
+Aluno.h
+/Users/gutodelazeri/workspace/college/Programming-Languages/OOP/Q4/Aluno.h
+Funcionario.h
+/Users/gutodelazeri/workspace/college/Programming-Languages/OOP/Q4/Funcionario.h
 

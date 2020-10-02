@@ -13,8 +13,8 @@ CMakeFiles/main.dir/Q3/Funcionario.cpp.o
  ../Q1/Pessoa.h
  /Users/gutodelazeri/workspace/college/Programming-Languages/OOP/Q3/Funcionario.cpp
  /Users/gutodelazeri/workspace/college/Programming-Languages/OOP/Q3/Funcionario.h
-CMakeFiles/main.dir/Q3/main.cpp.o
+CMakeFiles/main.dir/Q4/main.cpp.o
  ../Q1/Aluno.h
  ../Q1/Pessoa.h
- /Users/gutodelazeri/workspace/college/Programming-Languages/OOP/Q3/Funcionario.h
- /Users/gutodelazeri/workspace/college/Programming-Languages/OOP/Q3/main.cpp
+ ../Q3/Funcionario.h
+ /Users/gutodelazeri/workspace/college/Programming-Languages/OOP/Q4/main.cpp

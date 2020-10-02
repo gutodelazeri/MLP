@@ -23,8 +23,26 @@ Pessoa& Pessoa::operator=(const Pessoa& outra){
     this->dtnascimento = outra.dtnascimento;
     this->sexo = outra.sexo;
     std::cout << "Operator= chamado" << std::endl;
+
     return *this;
 }
+
+bool Pessoa::operator<(const Pessoa& outra) {
+    return this->nome < outra.nome;
+}
+
+bool Pessoa::operator>(const Pessoa& outra) {
+    return this->nome > outra.nome;
+}
+
+bool Pessoa::operator<=(const Pessoa& outra) {
+    return this->nome <= outra.nome;
+}
+
+bool Pessoa::operator>=(const Pessoa& outra) {
+    return this->nome >= outra.nome;
+}
+
 time_t Pessoa::get_dtnascimento() const{
     return this->dtnascimento;
 }

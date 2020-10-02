@@ -8,12 +8,8 @@
 #ifndef OOP_FUNCIONARIO_H
 #define OOP_FUNCIONARIO_H
 class Funcionario: public Pessoa {
-    enum Cargo { INDEFINIDO, PROGRAMADOR, ANALISTA, GERENTE, DIRETOR};
-
-private:
-    Cargo cargo;
-    double salario;
 public:
+    enum Cargo { INDEFINIDO, PROGRAMADOR, ANALISTA, GERENTE, DIRETOR};
     Funcionario();
     Funcionario(std::string nome, Sexo sexo, time_t dtnascimento, Cargo cargo, double salario);
     Funcionario(const Funcionario& outro);
@@ -26,5 +22,8 @@ public:
     void set_salario(double salario);
 
     std::string toString();
+private:
+    Cargo cargo;
+    double salario;
 };
 #endif //OOP_FUNCIONARIO_H

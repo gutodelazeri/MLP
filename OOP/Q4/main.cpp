@@ -10,7 +10,6 @@ using namespace std;
 
 #define SIZE 10
 
-
 template<class T>
 int lomutoPartition(vector<T*> &vec, int pivot_index, int start , int end) {
     T pivot = *vec[pivot_index];
@@ -55,9 +54,10 @@ int main() {
     mt19937 mt(device());
     // Used to choose which class will be instantiated (Pessoa, Aluno ou Funcionario)
     uniform_int_distribution<int> dist1(1, 3);
-    // Used to name the objects
+    // Used to name the objects (so that the sorting becomes more funny)
     uniform_int_distribution<int> dist2(0, 1000);
 
+    // Create objects
     for (int i = 0; i < SIZE; i++) {
         int op = dist1(mt);
         if (op == 1)
@@ -72,9 +72,15 @@ int main() {
         }
     }
 
+    // Sort the vector
     quickSort(vetor);
 
+    // Print info
     for(auto p : vetor)
         cout << p->get_nome() <<  endl;
+
+    // Delete objects
+    for (int i = 0; i < SIZE; i++)
+        delete vetor[i];
 }
 

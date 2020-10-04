@@ -14,7 +14,7 @@ int main() {
     mt19937 mt(device());
     uniform_int_distribution<int> dist(1,3);
 
-
+    // Create objects
     for(int i = 0; i < SIZE; i++){
         int op = dist(mt);
         if(op == 1)
@@ -29,12 +29,13 @@ int main() {
         }
     }
 
+    // Print info
     for(int i = 0; i < SIZE; i++){
         cout << "vetor[" << i << "] = " << vetor[i]->toString() << endl;
     }
 
+    // Delete objects
     for(int i = 0; i < SIZE; i++){
         delete vetor[i];
     }
-
 }

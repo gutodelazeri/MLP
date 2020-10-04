@@ -1,3 +1,8 @@
+- Não há muito que analisar no programa original pois o tipo do vetor é primitivo.
+
+- O que podemos ter certeza é que, como não há pré-alocação da memória para o vetor, haverão
+  diversas cópias para novos espaços de memória, conforme a capacidade máxima do vetor é atingida.
+
 Output completo do programa original:
 
     Tamanho do vetor = 0
@@ -23,6 +28,13 @@ Output completo do programa original:
      elemento 7 = 7
      elemento 8 = 8
      elemento 9 = 9
+--------------------------------------------------------------------------------------------------------------
+- Objetos são construídos e depois copiados para a região de memória do vetor. Pode-se eliminar o overhead
+  causado pela construção fora de lugar do objeto usando-se o método emplace_back, o qual constrói o objeto
+  diretamente no espaço de memória do vetor
+
+- Quando a capacidade máxima do vetor é atingida, uma nova região de memória é alocada e
+  todos os objetos do vetor são copiados para o novo espaço de memória
 
 Output completo do programa modificado:
 
@@ -30,49 +42,49 @@ Tamanho do vetor = 0                        |
 Inserindo alguns elementos...               |
 Construtor alternativo de Pessoa chamado    |
 Construtor Pessoa() chamado                 |
+Construtor de cópia chamado                 |---------- Objeto 0 é construído e copiado para o vetor
+Construtor alternativo de Pessoa chamado    |
+Construtor Pessoa() chamado                 |
 Construtor de cópia chamado                 |
+Construtor de cópia chamado                 |---------- Objeto 1 é construído; Objetos 0 e 1 são copiados para o vetor
 Construtor alternativo de Pessoa chamado    |
 Construtor Pessoa() chamado                 |
 Construtor de cópia chamado                 |
 Construtor de cópia chamado                 |
+Construtor de cópia chamado                 |---------- Objeto 2 é construído; Objetos 0,1,2 são copiados para o vetor
 Construtor alternativo de Pessoa chamado    |
 Construtor Pessoa() chamado                 |
-Construtor de cópia chamado                 |
-Construtor de cópia chamado                 |
-Construtor de cópia chamado                 |
-Construtor alternativo de Pessoa chamado    |
-Construtor Pessoa() chamado                 |
-Construtor de cópia chamado                 |
-Construtor alternativo de Pessoa chamado    |
-Construtor Pessoa() chamado                 |
-Construtor de cópia chamado                 |
-Construtor de cópia chamado                 |
-Construtor de cópia chamado                 |
-Construtor de cópia chamado                 |
-Construtor de cópia chamado                 |
-Construtor alternativo de Pessoa chamado    |
-Construtor Pessoa() chamado                 |
-Construtor de cópia chamado                 |
-Construtor alternativo de Pessoa chamado    |
-Construtor Pessoa() chamado                 |
-Construtor de cópia chamado                 |
-Construtor alternativo de Pessoa chamado    |
-Construtor Pessoa() chamado                 |
-Construtor de cópia chamado                 |
+Construtor de cópia chamado                 |---------- Objeto 3 é construído e copiado para o vetor;
 Construtor alternativo de Pessoa chamado    |
 Construtor Pessoa() chamado                 |
 Construtor de cópia chamado                 |
 Construtor de cópia chamado                 |
 Construtor de cópia chamado                 |
 Construtor de cópia chamado                 |
-Construtor de cópia chamado                 |
-Construtor de cópia chamado                 |
-Construtor de cópia chamado                 |
-Construtor de cópia chamado                 |
-Construtor de cópia chamado                 |
+Construtor de cópia chamado                 |---------- Objeto 4 é construído; Objetos 0,1,2,3,4 são copiados para o vetor
+Construtor alternativo de Pessoa chamado    |
+Construtor Pessoa() chamado                 |
+Construtor de cópia chamado                 |---------- Objeto 5 é construído e copiado para o vetor
+Construtor alternativo de Pessoa chamado    |
+Construtor Pessoa() chamado                 |
+Construtor de cópia chamado                 |---------- Objeto 6 é construído e copiado para o vetor
+Construtor alternativo de Pessoa chamado    |
+Construtor Pessoa() chamado                 |
+Construtor de cópia chamado                 |---------- Objeto 7 é construído e copiado para o vetor
 Construtor alternativo de Pessoa chamado    |
 Construtor Pessoa() chamado                 |
 Construtor de cópia chamado                 |
+Construtor de cópia chamado                 |
+Construtor de cópia chamado                 |
+Construtor de cópia chamado                 |
+Construtor de cópia chamado                 |
+Construtor de cópia chamado                 |
+Construtor de cópia chamado                 |
+Construtor de cópia chamado                 |
+Construtor de cópia chamado                 |---------- Objeto 8 é construído; Objetos 0,1,2,3,4,5,6,7,8 são copiados para o vetor
+Construtor alternativo de Pessoa chamado    |
+Construtor Pessoa() chamado                 |
+Construtor de cópia chamado                 |---------- Objeto 9 é construído e copiado para o vetor
 Tamanho do vetor = 10                       |
 vetor[0] = Pessoa{
 	Nome: Indefinido

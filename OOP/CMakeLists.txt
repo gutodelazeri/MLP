@@ -8,6 +8,7 @@ include_directories(Q3)
 set(PESSOA Q1/Pessoa.cpp)
 set(ALUNO Q1/Aluno.cpp)
 set(FUNCIONARIO Q3/Funcionario.cpp)
+
 #set(MAIN Q1/main.cpp)
 #set(MAIN Q2/main.cpp)
 #set(MAIN Q3/main.cpp)

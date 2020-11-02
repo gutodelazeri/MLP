@@ -22,5 +22,8 @@ cabal.project.local~
 .HTF/
 .ghc.environment.*
 
-# mac OS
+
 .DS_Store
+.ipynb_checkpoints
+.idea
+
